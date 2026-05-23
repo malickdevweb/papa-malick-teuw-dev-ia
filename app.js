@@ -258,8 +258,10 @@ const KB = {
   jootaaybi: "JOOTAAYBI est un clone WhatsApp 100% vanilla JavaScript : inscription, contacts, chat privé & groupes, envoi de médias, statuts, profil. Frontend : HTML, TailwindCSS, JS vanilla, JSON Server.",
   portfolio: "Ce portfolio contient un assistant IA (celui que vous utilisez !) pour présenter les projets, compétences et parcours de Malick. Développé en React.js + Node.js avec intégration API IA et prompt engineering.",
   etudiants: "Application de gestion académique Laravel : inscriptions, notes, absences et résultats des étudiants. Architecture MVC, base MySQL.",
+  m91: "M91 Infinity Group est une plateforme corporate premium et full-stack développée par Malick. Elle regroupe l'Immobilier, la Tech, le Web et une Academy. Design haut de gamme et SEO optimisé, déployée sur Vercel.",
+  wego: "Wego Elite (Wigo) est une super-app PWA similaire à Yango (mobilité VTC, restaurants, hôtels et services 360°) développée par Malick pour une entreprise étrangère. Le code est privé mais le projet est déployé en production.",
   stack: "Compétences de Malick Teuw — Frontend: React, Angular, TypeScript, Tailwind, Flutter. Backend: Laravel (PHP), Spring Boot (Java), Node.js/Express, Python. IA/ML: TensorFlow, OpenAI API, HuggingFace, LLM/RAG, Deep Learning. DevOps: Docker, Nginx, Render, Railway, AWS, GitHub Actions. BDD: PostgreSQL, MySQL, MongoDB, Supabase, Firebase.",
-  hire: "Pourquoi recruter Malick Teuw ? Il maîtrise l'ensemble de la stack web — du frontend React jusqu'au backend distribué (Laravel, Spring Boot, Node.js) et l'IA (TensorFlow, OpenAI). Il a 9 projets concrets déployés en production. Formé à l'Orange Digital Center (Sonatel Académie) et certifié ISEP-Thies. Rigoureux, autonome, passionné d'IA appliquée.",
+  hire: "Pourquoi recruter Malick Teuw ? Il maîtrise l'ensemble de la stack web — du frontend React jusqu'au backend distribué (Laravel, Spring Boot, Node.js) et l'IA (TensorFlow, OpenAI). Il a 11 projets concrets déployés en production. Formé à l'Orange Digital Center (Sonatel Académie) et certifié ISEP-Thies. Rigoureux, autonome, passionné d'IA appliquée.",
   contact: "Contact : Email : malickteuw.devweb@gmail.com | WhatsApp/Tél : +221 77-171-90-13 | Portfolio : malickteuw.vercel.app | GitHub : github.com/malickteuw",
   formation: "Malick Teuw a suivi : Formation Full-Stack Developer à l'Orange Digital Center (Sonatel Académie) 2025, Certification CCP Développement Web à ISEP-Thies (2024), Baccalauréat mention Assez Bien (2022-2023), plusieurs certifications Coursera et Force-N en IA et développement web."
 };
@@ -275,12 +277,14 @@ function getAIResponse(question) {
   if (/jootaaybi|whatsapp|messagerie/.test(q)) return KB.jootaaybi;
   if (/portfolio|assistant|chatbot|chat/.test(q)) return KB.portfolio;
   if (/étudiant|académique|scolaire/.test(q)) return KB.etudiants;
+  if (/m91|infinity|conglomérat|immobilier|academy/.test(q)) return KB.m91;
+  if (/wego|wigo|yango|vtc|super-app|superapp|pwa/.test(q)) return KB.wego;
   if (/stack|compétence|technolog|maîtris|skill|framework/.test(q)) return KB.stack;
   if (/recrut|hire|embauche|pourquoi|why|profil/.test(q)) return KB.hire;
   if (/contact|email|whatsapp|téléphone|phone|atteindre/.test(q)) return KB.contact;
   if (/format|certif|diplôme|école|étude|parcours/.test(q)) return KB.formation;
-  if (/projet|project|build|travail|work/.test(q)) return "Malick Teuw a 9 projets concrets : AgriSen (IA agricole), BankODC (Spring Boot), BANQUE (Laravel multi-DB), MAXITSA (paiements), Cargaisons (TypeScript), G-Salaire (React+Node), Gestion Étudiants (Laravel), JOOTAAYBI (clone WhatsApp), Portfolio IA. Posez-moi des questions sur l'un d'eux !";
-  return "Malick Teuw est un développeur Full-Stack & IA passionné, formé à l'Orange Digital Center (Sonatel Académie). Il maîtrise React, Laravel, Spring Boot, Node.js, TensorFlow et l'intégration LLM. Il a 9 projets déployés. Demandez-moi ses projets, ses compétences ou ses coordonnées !";
+  if (/projet|project|build|travail|work/.test(q)) return "Malick Teuw a 11 projets concrets : AgriSen (IA agricole), BankODC (Spring Boot), BANQUE (Laravel multi-DB), MAXITSA (paiements), Cargaisons (TypeScript), G-Salaire (React+Node), Gestion Étudiants (Laravel), JOOTAAYBI (clone WhatsApp), Portfolio IA, M91 Infinity Group, et Wego Elite (PWA VTC). Posez-moi des questions sur l'un d'eux !";
+  return "Malick Teuw est un développeur Full-Stack & IA passionné, formé à l'Orange Digital Center (Sonatel Académie). Il maîtrise React, Laravel, Spring Boot, Node.js, TensorFlow et l'intégration LLM. Il a 11 projets déployés. Demandez-moi ses projets, ses compétences ou ses coordonnées !";
 }
 
 
