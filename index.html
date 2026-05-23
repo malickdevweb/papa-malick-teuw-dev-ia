@@ -8,6 +8,8 @@
   <meta name="description" content="Full-Stack Developer & AI Engineer — React, Laravel, Spring Boot, Node.js, LLM/RAG integration. 11 production projects." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -25,13 +27,13 @@
     <div class="nav-inner">
       <div class="nav-logo"><span class="logo-bracket">&lt;</span>malick.teuw<span class="logo-bracket">/&gt;</span></div>
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#stack">Stack</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about"><i class="fa-solid fa-user" style="margin-right:5px;font-size:.8rem;"></i>About</a></li>
+        <li><a href="#projects"><i class="fa-solid fa-code" style="margin-right:5px;font-size:.8rem;"></i>Projects</a></li>
+        <li><a href="#experience"><i class="fa-solid fa-road" style="margin-right:5px;font-size:.8rem;"></i>Experience</a></li>
+        <li><a href="#stack"><i class="fa-solid fa-layer-group" style="margin-right:5px;font-size:.8rem;"></i>Stack</a></li>
+        <li><a href="#contact"><i class="fa-solid fa-paper-plane" style="margin-right:5px;font-size:.8rem;"></i>Contact</a></li>
       </ul>
-      <a href="#contact" class="nav-cta" id="nav-cta-btn">Hire Me</a>
+      <a href="#contact" class="nav-cta" id="nav-cta-btn"><i class="fa-solid fa-handshake" style="margin-right:6px;"></i>Hire Me</a>
       <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu" onclick="toggleMobileMenu()">
         <span></span><span></span><span></span>
       </button>
@@ -119,31 +121,31 @@
         </div>
         <div class="about-cards">
           <div class="about-card glass">
-            <div class="about-card-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/></svg>
+            <div class="about-card-icon" style="background:rgba(139,92,246,0.12);border-radius:14px;padding:12px;display:inline-flex;margin-bottom:.5rem;">
+              <i class="fa-solid fa-brain" style="font-size:1.7rem;color:var(--accent2);"></i>
             </div>
-            <h4>IA et LLM</h4>
+            <h4>IA &amp; LLM</h4>
             <p>TensorFlow, OpenAI API, RAG pipelines — de l'idée à l'API production</p>
           </div>
           <div class="about-card glass">
-            <div class="about-card-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+            <div class="about-card-icon" style="background:rgba(245,158,11,0.12);border-radius:14px;padding:12px;display:inline-flex;margin-bottom:.5rem;">
+              <i class="fa-solid fa-server" style="font-size:1.7rem;color:var(--gold);"></i>
             </div>
-            <h4>Architecture du backend</h4>
+            <h4>Architecture Backend</h4>
             <p>Laravel, Spring Boot, Node.js — systèmes distribués, async, microservices</p>
           </div>
           <div class="about-card glass">
-            <div class="about-card-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+            <div class="about-card-icon" style="background:rgba(16,185,129,0.12);border-radius:14px;padding:12px;display:inline-flex;margin-bottom:.5rem;">
+              <i class="fa-brands fa-docker" style="font-size:1.7rem;color:var(--green);"></i>
             </div>
-            <h4>Expédier à la production</h4>
+            <h4>Mise en Production</h4>
             <p>Docker, CI/CD, Render, AWS — pas que sur localhost</p>
           </div>
           <div class="about-card glass">
-            <div class="about-card-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            <div class="about-card-icon" style="background:rgba(99,102,241,0.12);border-radius:14px;padding:12px;display:inline-flex;margin-bottom:.5rem;">
+              <i class="devicon-python-plain colored" style="font-size:1.7rem;"></i>
             </div>
-            <h4>Python & Architecture des Systèmes</h4>
+            <h4>Python &amp; Architecture</h4>
             <p>Automatisation, conception de solutions logicielles et algorithmiques avec Python</p>
           </div>
         </div>
@@ -173,8 +175,8 @@
           <div class="proj-title">AI RAG Assistant</div>
           <p class="proj-desc">Assistant IA basé sur les LLM et le RAG pour interroger des documents via chat. Recherche sémantique, architecture moderne et déploiement IaC complet (Docker, Terraform, CI/CD).</p>
           <div class="proj-footer">
-            <span class="proj-role">AI / Cloud Engineer</span>
-            <a href="https://github.com/MalickDevWeb/AI-RAG-Assistant-Production-Ready-LLM-System" target="_blank" class="proj-link">GitHub →</a>
+            <span class="proj-role"><i class="fa-solid fa-microchip" style="margin-right:5px;color:var(--accent2);"></i>AI / Cloud Engineer</span>
+            <a href="https://github.com/MalickDevWeb/AI-RAG-Assistant-Production-Ready-LLM-System" target="_blank" class="proj-link"><i class="fa-brands fa-github"></i> GitHub</a>
           </div>
         </div>
 
@@ -191,8 +193,8 @@
           <div class="proj-title">PMT-AGENT-IA (AI Factory)</div>
           <p class="proj-desc">Plateforme AI-OS de niveau entreprise avec un assistant RAG à "double cerveau" (LangGraph + Ollama). Architecture de microservices (FastAPI, Next.js, ChromaDB) hautement disponible, entièrement déployée via Terraform sur AWS avec un pipeline CI/CD (GitHub Actions, Jenkins, ArgoCD).</p>
           <div class="proj-footer">
-            <span class="proj-role">Senior AI & DevOps Engineer</span>
-            <a href="https://github.com/MalickDevWeb/PMT-AGENT-IA" target="_blank" class="proj-link">GitHub →</a>
+            <span class="proj-role"><i class="fa-solid fa-robot" style="margin-right:5px;color:var(--accent2);"></i>Senior AI &amp; DevOps Engineer</span>
+            <a href="https://github.com/MalickDevWeb/PMT-AGENT-IA" target="_blank" class="proj-link"><i class="fa-brands fa-github"></i> GitHub</a>
           </div>
         </div>
 
@@ -209,27 +211,55 @@
           <div class="proj-title">AgriSen — Plateforme IA Agricole</div>
           <p class="proj-desc">Plateforme intelligente de gestion agricole combinant vision par ordinateur (diagnostic des cultures) et recommandations LLM pour accompagner les agriculteurs sénégalais.</p>
           <div class="proj-footer">
-            <span class="proj-role">Full Stack — IA &amp; Web</span>
-            <a href="https://github.com/MalickDevWeb/Agrissen_Ai" target="_blank" class="proj-link">GitHub →</a>
+            <span class="proj-role"><i class="fa-solid fa-seedling" style="margin-right:5px;color:var(--green);"></i>Full Stack — IA &amp; Web</span>
+            <a href="https://github.com/MalickDevWeb/Agrissen_Ai" target="_blank" class="proj-link"><i class="fa-brands fa-github"></i> GitHub</a>
           </div>
         </div>
 
-        <!-- 4: AI Portfolio -->
-        <div class="proj-card featured-card" id="proj-portfolio">
-          <div class="proj-number">04 — IA + UX</div>
+        <!-- 4: AI Portfolio — LIVE DEMO CHAT -->
+        <div class="proj-card featured-card live-demo-card" id="proj-portfolio">
+          <div class="proj-number">04 — IA + UX · <span style="color:var(--green);font-size:.75rem;"><i class="fa-solid fa-circle" style="font-size:.5rem;animation:pulse-dot 1.4s infinite;"></i> LIVE — Mistral AI</span></div>
           <div class="proj-tags">
             <span class="tag tag-purple">LLM / RAG</span>
-            <span class="tag tag-purple">React.js</span>
+            <span class="tag tag-purple">Mistral AI</span>
             <span class="tag">Node.js</span>
             <span class="tag">Prompt Eng</span>
           </div>
-          <div class="proj-title">Portfolio IA — Assistant Intégré</div>
-          <p class="proj-desc">Portfolio interactif avec chatbox IA pour présenter projets, compétences et parcours. Intégration LLM, prompt engineering, UX augmentée par l'intelligence artificielle.</p>
-          <div class="proj-footer">
-            <span class="proj-role">Full Stack — IA &amp; UX</span>
-            <button class="proj-link" onclick="openAssistant()" style="background:none;border:none;cursor:pointer">Try AI →</button>
+          <div class="proj-title">Portfolio IA — Testez l'Assistant en Direct ⚡</div>
+          <p class="proj-desc" style="margin-bottom:.8rem;">Ceci est une démonstration <strong>en temps réel</strong> de l'intégration LLM. Posez une question sur mon profil ou mes projets :</p>
+
+          <!-- LIVE CHAT DEMO WINDOW -->
+          <div class="demo-chat-window glass">
+            <div class="demo-chat-header">
+              <i class="fa-solid fa-robot" style="color:var(--accent2);"></i>
+              <span>Malick's AI · Powered by <strong>Mistral AI</strong></span>
+              <span class="demo-status-dot"><i class="fa-solid fa-circle" style="color:var(--green);font-size:.5rem;"></i> Online</span>
+            </div>
+            <div class="demo-chat-body" id="demo-chat-body">
+              <div class="demo-msg bot">
+                <span class="demo-avatar"><i class="fa-solid fa-robot"></i></span>
+                <div class="demo-bubble">Bonjour ! Je suis l'IA de Malick Teuw, propulsée par Mistral AI. Demandez-moi n'importe quoi sur son profil, ses projets ou ses compétences. Je réponds en <strong>temps réel</strong> !</div>
+              </div>
+            </div>
+            <div class="demo-chat-input-row">
+              <input type="text" id="demo-input" class="demo-input" placeholder="Ex: Parle-moi du projet AgriSen..." onkeydown="if(event.key==='Enter') sendDemoMessage()" />
+              <button class="demo-send-btn" onclick="sendDemoMessage()" id="demo-send-btn">
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </div>
+            <div class="demo-suggestions">
+              <button class="demo-suggest" onclick="demoSuggest(this)">Quel est ton meilleur projet IA ?</button>
+              <button class="demo-suggest" onclick="demoSuggest(this)">Pourquoi recruter Malick ?</button>
+              <button class="demo-suggest" onclick="demoSuggest(this)">Compétences DevOps ?</button>
+            </div>
+          </div>
+
+          <div class="proj-footer" style="margin-top:.8rem;">
+            <span class="proj-role"><i class="fa-solid fa-wand-magic-sparkles" style="margin-right:5px;color:var(--accent);"></i>Full Stack — IA &amp; UX</span>
+            <a href="https://papa-malick-teuw-dev-ia.vercel.app/" target="_blank" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
           </div>
         </div>
+
 
         <!-- 5: Keur Ya Aicha -->
         <div class="proj-card" id="proj-kya">
@@ -243,8 +273,8 @@
           <div class="proj-title">Keur Ya Aicha — Backend</div>
           <p class="proj-desc">Architecture backend et API REST robuste pour le système central de Keur Ya Aicha (KYA). Gestion sécurisée des données, des utilisateurs et des processus métiers pour soutenir le frontend.</p>
           <div class="proj-footer">
-            <span class="proj-role">Backend Developer</span>
-            <a href="https://github.com/MalickDevWeb/keur_ya_aicha" target="_blank" class="proj-link">GitHub →</a>
+            <span class="proj-role"><i class="fa-solid fa-database" style="margin-right:5px;color:var(--gold);"></i>Backend Developer</span>
+            <a href="https://github.com/MalickDevWeb/keur_ya_aicha" target="_blank" class="proj-link"><i class="fa-brands fa-github"></i> GitHub</a>
           </div>
         </div>
 
@@ -261,8 +291,8 @@
           <div class="proj-title">BankODC — Gestion Bancaire Java</div>
           <p class="proj-desc">Application backend complète : création automatique de clients/comptes, génération de numéros, envoi email/SMS, sécurisation JWT, déployée sur Render.</p>
           <div class="proj-footer">
-            <span class="proj-role">Développeur Back-end Java</span>
-            <a href="https://github.com/MalickDevWeb/bankodc" target="_blank" class="proj-link">GitHub →</a>
+            <span class="proj-role"><i class="devicon-java-plain colored" style="margin-right:5px;font-size:1rem;"></i>Développeur Back-end Java</span>
+            <a href="https://github.com/MalickDevWeb/bankodc" target="_blank" class="proj-link"><i class="fa-brands fa-github"></i> GitHub</a>
           </div>
         </div>
 
@@ -279,8 +309,8 @@
           <div class="proj-title">BANQUE — Gestion Multi-DB</div>
           <p class="proj-desc">Système bancaire distribué : Railway (clients), Neon (comptes bloqués), MongoDB (transactions). Jobs asynchrones via Horizon, monitoring, emails/SMS automatiques.</p>
           <div class="proj-footer">
-            <span class="proj-role">Développeur Back-end Laravel</span>
-            <a href="https://github.com/MalickDevWeb/API_LARA" target="_blank" class="proj-link">GitHub →</a>
+            <span class="proj-role"><i class="devicon-laravel-original colored" style="margin-right:5px;font-size:1rem;"></i>Développeur Back-end Laravel</span>
+            <a href="https://github.com/MalickDevWeb/API_LARA" target="_blank" class="proj-link"><i class="fa-brands fa-github"></i> GitHub</a>
           </div>
         </div>
 
@@ -297,8 +327,8 @@
           <div class="proj-title">Gestion des Cargaisons</div>
           <p class="proj-desc">API RESTful pour la gestion des cargaisons, transporteurs et expéditions. Architecture propre : DTOs, Services, Repositories, Middleware JWT. CI/CD via Docker.</p>
           <div class="proj-footer">
-            <span class="proj-role">Back-end TypeScript</span>
-            <a href="https://github.com/MalickDevWeb/gestion-cargaisons" target="_blank" class="proj-link">GitHub →</a>
+            <span class="proj-role"><i class="devicon-typescript-plain colored" style="margin-right:5px;font-size:1rem;"></i>Back-end TypeScript</span>
+            <a href="https://github.com/MalickDevWeb/gestion-cargaisons" target="_blank" class="proj-link"><i class="fa-brands fa-github"></i> GitHub</a>
           </div>
         </div>
 
@@ -315,8 +345,8 @@
           <div class="proj-title">API REST - Gestion d'Approvisionnement</div>
           <p class="proj-desc">API robuste respectant la Clean Architecture (Services, Repositories). Gestion transactionnelle ACID des stocks, upload d'images via Cloudinary, sécurité JWT et documentation Swagger intégrée.</p>
           <div class="proj-footer">
-            <span class="proj-role">Python Developer</span>
-            <a href="https://github.com/MalickDevWeb/examen_python_221" target="_blank" class="proj-link">GitHub →</a>
+            <span class="proj-role"><i class="devicon-python-plain colored" style="margin-right:5px;font-size:1rem;"></i>Python Developer</span>
+            <a href="https://github.com/MalickDevWeb/examen_python_221" target="_blank" class="proj-link"><i class="fa-brands fa-github"></i> GitHub</a>
           </div>
         </div>
 
@@ -333,9 +363,9 @@
           <div class="proj-title">M91 Infinity Group</div>
           <p class="proj-desc">Plateforme vitrine premium et fullstack pour un conglomérat leader (Immobilier, Tech, Web, Academy). Design haut de gamme, optimisation SEO, et performances exceptionnelles.</p>
           <div class="proj-footer">
-            <span class="proj-role">Lead Full-Stack Developer</span>
-            <a href="https://github.com/MalickDevWeb/M91-INFINITY-GROUPE" target="_blank" class="proj-link">GitHub →</a>
-            <a href="https://m91-infinity-groupe.vercel.app/" target="_blank" class="proj-link" style="margin-left:8px">Live ↗</a>
+            <span class="proj-role"><i class="devicon-nextjs-original colored" style="margin-right:5px;font-size:1rem;"></i>Lead Full-Stack Developer</span>
+            <a href="https://github.com/MalickDevWeb/M91-INFINITY-GROUPE" target="_blank" class="proj-link"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="https://m91-infinity-groupe.vercel.app/" target="_blank" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
           </div>
         </div>
 
@@ -352,9 +382,9 @@
           <div class="proj-title">Wego Elite (Wigo)</div>
           <p class="proj-desc">Plateforme "Super-App" PWA similaire à Yango développée pour une entreprise étrangère. Intégration de la mobilité (VTC), restauration, hôtellerie et services 360°. Code source privé sous contrat de confidentialité.</p>
           <div class="proj-footer">
-            <span class="proj-role">Full-Stack Developer</span>
-            <span class="proj-link" style="color:var(--text-muted); cursor:not-allowed;" title="Dépôt Privé">GitHub Privé 🔒</span>
-            <a href="https://wigo-officiel.vercel.app/" target="_blank" class="proj-link" style="margin-left:8px">Live Demo ↗</a>
+            <span class="proj-role"><i class="devicon-nextjs-original colored" style="margin-right:5px;font-size:1rem;"></i>Full-Stack Developer</span>
+            <span class="proj-link" style="color:var(--muted);cursor:not-allowed;"><i class="fa-solid fa-lock"></i> Repo Privé</span>
+            <a href="https://wigo-officiel.vercel.app/" target="_blank" class="proj-link" style="margin-left:8px"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
           </div>
         </div>
 
@@ -411,47 +441,47 @@
 
         <!-- Right side: Certifications + Metrics -->
         <div class="exp-right">
-          <h4 class="exp-right-title">🎓 Education &amp; Certifications</h4>
+          <h4 class="exp-right-title"><i class="fa-solid fa-user-graduate" style="color:var(--accent2); margin-right:8px;"></i> Education &amp; Certifications</h4>
           <div class="cert-list">
             <div class="cert-card glass">
-              <div class="cert-icon">🎓</div>
+              <div class="cert-icon"><i class="fa-solid fa-graduation-cap" style="color:var(--accent);"></i></div>
               <div><div class="cert-name">Full-Stack Developer</div><div class="cert-org">Orange Digital Center — Sonatel Académie 2025</div></div>
-              <div class="cert-badge done">✔️ Diplômé</div>
+              <div class="cert-badge done"><i class="fa-solid fa-check"></i> Diplômé</div>
             </div>
             <div class="cert-card glass">
-              <div class="cert-icon">📜</div>
+              <div class="cert-icon"><i class="fa-solid fa-certificate" style="color:var(--gold);"></i></div>
               <div><div class="cert-name">Certification CCP Web</div><div class="cert-org">ISEP-Thies — 2024</div></div>
-              <div class="cert-badge done">✔️ Validé</div>
+              <div class="cert-badge done"><i class="fa-solid fa-check"></i> Validé</div>
             </div>
             <div class="cert-card glass">
-              <div class="cert-icon">☁️</div>
+              <div class="cert-icon"><i class="fa-brands fa-aws" style="color:#FF9900;"></i></div>
               <div><div class="cert-name">AWS Cloud Practitioner</div><div class="cert-org">Amazon Web Services</div></div>
-              <div class="cert-badge in-progress">⏳ En cours</div>
+              <div class="cert-badge in-progress"><i class="fa-solid fa-hourglass-half"></i> En cours</div>
             </div>
             <a href="Certificat-IA-Pour-Tous.pdf" target="_blank" style="text-decoration:none; color:inherit;">
               <div class="cert-card glass" style="cursor:pointer;">
-                <div class="cert-icon">🤖</div>
+                <div class="cert-icon"><i class="fa-solid fa-robot" style="color:var(--accent2);"></i></div>
                 <div><div class="cert-name">IA Pour Tous</div><div class="cert-org">Diplôme Officiel (PDF)</div></div>
-                <div class="cert-badge verified">🔗 Consulter</div>
+                <div class="cert-badge verified"><i class="fa-solid fa-link"></i> Consulter</div>
               </div>
             </a>
             <a href="Certificat-Devollopenet%20-Mobile-flutter.pdf" target="_blank" style="text-decoration:none; color:inherit;">
               <div class="cert-card glass" style="cursor:pointer;">
-                <div class="cert-icon">📱</div>
+                <div class="cert-icon"><i class="fa-solid fa-mobile-screen" style="color:var(--green);"></i></div>
                 <div><div class="cert-name">Développement Mobile Flutter</div><div class="cert-org">Diplôme Officiel (PDF)</div></div>
-                <div class="cert-badge verified">🔗 Consulter</div>
+                <div class="cert-badge verified"><i class="fa-solid fa-link"></i> Consulter</div>
               </div>
             </a>
             <a href="Certificat_Large_Model_language.pdf" target="_blank" style="text-decoration:none; color:inherit;">
               <div class="cert-card glass" style="cursor:pointer;">
-                <div class="cert-icon">🏆</div>
+                <div class="cert-icon"><i class="fa-solid fa-trophy" style="color:var(--gold);"></i></div>
                 <div><div class="cert-name">Large Language Models (LLM)</div><div class="cert-org">Diplôme Officiel (PDF)</div></div>
-                <div class="cert-badge verified">🔗 Consulter</div>
+                <div class="cert-badge verified"><i class="fa-solid fa-link"></i> Consulter</div>
               </div>
             </a>
           </div>
 
-          <h4 class="exp-right-title" style="margin-top:2rem">📊 By the Numbers</h4>
+          <h4 class="exp-right-title" style="margin-top:2rem"><i class="fa-solid fa-chart-pie" style="color:var(--accent2); margin-right:8px;"></i> By the Numbers</h4>
           <div class="metrics-grid">
             <div class="metric-card glass"><div class="metric-num" data-target="4">0</div><div class="metric-label">AI Systems Built</div></div>
             <div class="metric-card glass"><div class="metric-num" data-target="12">0</div><div class="metric-label">Tech Mastered</div></div>
@@ -470,48 +500,48 @@
       <h2 class="section-title">Ce que je <span class="gradient-text">Maîtrise</span></h2>
       <div class="stack-grid">
         <div class="stack-category">
-          <h4 class="stack-cat-title">🧠 AI &amp; Machine Learning</h4>
+          <h4 class="stack-cat-title"><i class="fa-solid fa-brain" style="color:var(--accent2); margin-right:6px;"></i> IA \& Machine Learning</h4>
           <div class="stack-items">
-            <div class="stack-item">TensorFlow</div>
-            <div class="stack-item">OpenAI API</div>
-            <div class="stack-item">HuggingFace</div>
-            <div class="stack-item">LLM / RAG</div>
-            <div class="stack-item">Python (Flask)</div>
-            <div class="stack-item">Deep Learning</div>
+            <div class="stack-item"><i class="devicon-tensorflow-original colored"></i> TensorFlow</div>
+            <div class="stack-item"><i class="devicon-python-plain colored"></i> API OpenAI</div>
+            <div class="stack-item"><i class="devicon-python-plain colored"></i> Hugging Face</div>
+            <div class="stack-item"><i class="devicon-python-plain colored"></i> LLM / RAG</div>
+            <div class="stack-item"><i class="devicon-flask-original colored"></i> Python (Flask)</div>
+            <div class="stack-item"><i class="devicon-python-plain colored"></i> Deep Learning</div>
           </div>
         </div>
         <div class="stack-category">
-          <h4 class="stack-cat-title">⚙️ Backend</h4>
+          <h4 class="stack-cat-title"><i class="fa-solid fa-server" style="color:var(--accent2); margin-right:6px;"></i> Backend</h4>
           <div class="stack-items">
-            <div class="stack-item">Laravel (PHP)</div>
-            <div class="stack-item">Spring Boot (Java)</div>
-            <div class="stack-item">Node.js / Express</div>
-            <div class="stack-item">PostgreSQL</div>
-            <div class="stack-item">MongoDB</div>
-            <div class="stack-item">JWT / OAuth</div>
-            <div class="stack-item">Laravel Horizon</div>
+            <div class="stack-item"><i class="devicon-laravel-original colored"></i> Laravel (PHP)</div>
+            <div class="stack-item"><i class="devicon-spring-original colored"></i> Spring Boot (Java)</div>
+            <div class="stack-item"><i class="devicon-nodejs-plain colored"></i> Node.js / Express</div>
+            <div class="stack-item"><i class="devicon-postgresql-plain colored"></i> PostgreSQL</div>
+            <div class="stack-item"><i class="devicon-mongodb-plain colored"></i> MongoDB</div>
+            <div class="stack-item">🔐 JWT / OAuth</div>
+            <div class="stack-item"><i class="devicon-laravel-plain colored"></i> Horizon Laravel</div>
           </div>
         </div>
         <div class="stack-category">
-          <h4 class="stack-cat-title">🚀 DevOps &amp; Cloud</h4>
+          <h4 class="stack-cat-title"><i class="fa-solid fa-rocket" style="color:var(--accent2); margin-right:6px;"></i> DevOps \& Cloud</h4>
           <div class="stack-items">
-            <div class="stack-item">Docker / Compose</div>
-            <div class="stack-item">Nginx</div>
-            <div class="stack-item">Render / Railway</div>
-            <div class="stack-item">AWS (EC2, VPC)</div>
-            <div class="stack-item">GitHub Actions</div>
-            <div class="stack-item">Terraform</div>
+            <div class="stack-item"><i class="devicon-docker-plain colored"></i> Docker / Compose</div>
+            <div class="stack-item"><i class="devicon-nginx-original colored"></i> Nginx</div>
+            <div class="stack-item"><i class="devicon-amazonwebservices-plain-wordmark colored"></i> AWS (EC2, VPC)</div>
+            <div class="stack-item"><i class="devicon-githubactions-plain colored"></i> GitHub Actions</div>
+            <div class="stack-item"><i class="devicon-terraform-plain colored"></i> Terraform</div>
+            <div class="stack-item"><i class="devicon-railway-original colored"></i> Render / Railway</div>
           </div>
         </div>
         <div class="stack-category">
-          <h4 class="stack-cat-title">🖥️ Frontend &amp; Mobile</h4>
+          <h4 class="stack-cat-title"><i class="fa-solid fa-desktop" style="color:var(--accent2); margin-right:6px;"></i> Frontend \& Mobile</h4>
           <div class="stack-items">
-            <div class="stack-item">React.js / Next.js</div>
-            <div class="stack-item">TypeScript</div>
-            <div class="stack-item">Angular</div>
-            <div class="stack-item">Tailwind CSS</div>
-            <div class="stack-item">Flutter</div>
-            <div class="stack-item">Bootstrap</div>
+            <div class="stack-item"><i class="devicon-react-original colored"></i> React.js / Next.js</div>
+            <div class="stack-item"><i class="devicon-angularjs-plain colored"></i> Angular</div>
+            <div class="stack-item"><i class="devicon-typescript-plain colored"></i> TypeScript</div>
+            <div class="stack-item"><i class="devicon-flutter-plain colored"></i> Flutter</div>
+            <div class="stack-item"><i class="devicon-tailwindcss-original colored"></i> Tailwind CSS</div>
+            <div class="stack-item"><i class="devicon-bootstrap-plain colored"></i> Bootstrap</div>
           </div>
         </div>
       </div>
@@ -527,19 +557,19 @@
         <p>Disponible pour des postes Full-Stack, Backend et IA. Discutons !</p>
         <div class="contact-links">
           <a href="mailto:malickteuw.devweb@gmail.com" class="contact-link" id="contact-email-btn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <i class="fa-solid fa-envelope"></i>
             malickteuw.devweb@gmail.com
           </a>
           <a href="https://wa.me/221771719013" target="_blank" class="contact-link" id="contact-whatsapp-btn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <i class="fa-brands fa-whatsapp" style="color:#25D366;"></i>
             +221 77-171-90-13
           </a>
-          <a href="https://github.com/malickteuw" target="_blank" class="contact-link" id="contact-github-btn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            github.com/malickteuw
+          <a href="https://github.com/MalickDevWeb" target="_blank" class="contact-link" id="contact-github-btn">
+            <i class="fa-brands fa-github"></i>
+            github.com/MalickDevWeb
           </a>
           <a href="https://linkedin.com/in/malickteuw" target="_blank" class="contact-link" id="contact-linkedin-btn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <i class="fa-brands fa-linkedin" style="color:#0A66C2;"></i>
             LinkedIn
           </a>
         </div>
@@ -551,6 +581,12 @@
   <footer>
     <div class="container">
       <p>Construit par <strong>Malick Teuw</strong> · Full-Stack Developer &amp; AI Engineer · Orange Digital Center 2025 · <span id="footer-year"></span></p>
+      <div style="display:flex;justify-content:center;gap:1.2rem;margin-top:.8rem;">
+        <a href="https://github.com/MalickDevWeb" target="_blank" style="color:var(--muted);font-size:1.3rem;transition:color .2s;" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com/in/malickteuw" target="_blank" style="color:var(--muted);font-size:1.3rem;transition:color .2s;" title="LinkedIn"><i class="fa-brands fa-linkedin" style="color:#0A66C2;"></i></a>
+        <a href="https://wa.me/221771719013" target="_blank" style="color:var(--muted);font-size:1.3rem;transition:color .2s;" title="WhatsApp"><i class="fa-brands fa-whatsapp" style="color:#25D366;"></i></a>
+        <a href="mailto:malickteuw.devweb@gmail.com" style="color:var(--muted);font-size:1.3rem;transition:color .2s;" title="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
     </div>
   </footer>
 
@@ -570,7 +606,7 @@
     </button>
     <div class="ai-panel glass" id="ai-panel">
       <div class="ai-panel-header">
-        <div class="ai-avatar">🤖</div>
+        <div class="ai-avatar"><i class="fa-solid fa-robot"></i></div>
         <div>
           <div class="ai-panel-title">AI Portfolio Assistant</div>
           <div class="ai-panel-sub">Ask me about Malick's projects & skills</div>
@@ -579,8 +615,8 @@
       </div>
       <div class="ai-messages" id="ai-messages">
         <div class="ai-msg bot">
-          <span class="ai-msg-avatar">🤖</span>
-          <div class="ai-msg-bubble">Bonjour ! Je suis l'assistant IA de Malick Teuw. Je peux vous parler de ses 11 projets, ses compétences et son parcours. Que voulez-vous savoir ?</div>
+          <span class="ai-msg-avatar"><i class="fa-solid fa-robot"></i></span>
+          <div class="ai-msg-bubble">Bonjour ! Je suis un assistant IA spécialisé et restreint au profil de Malick Teuw. Je maîtrise ses domaines d'expertise : <strong>LLM / RAG, React.js, Node.js, et Prompt Engineering</strong>.<br><br>Que souhaitez-vous savoir sur ses projets ou son parcours ?</div>
         </div>
         <div class="ai-suggestions">
           <button class="ai-suggest-btn" onclick="sendSuggestion(this)" id="suggest-agrisen">C'est quoi AgriSen ?</button>

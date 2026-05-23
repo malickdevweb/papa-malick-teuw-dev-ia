@@ -169,8 +169,8 @@ document.getElementById('footer-year').textContent = new Date().getFullYear();
     setTimeout(() => {
       typingEl.style.display = 'none';
       const msg = document.createElement('div');
-      msg.className = 'chat-msg bot';
-      msg.innerHTML = `<span class="chat-avatar">🤖</span><span>${responses[idx++]}</span>`;
+      msg.className = 'ai-msg bot';
+      msg.innerHTML = `<span class="ai-msg-avatar"><i class="fa-solid fa-robot"></i></span><div class="ai-msg-bubble">${responses[idx++]}</div>`;
       body.insertBefore(msg, typingEl);
       body.scrollTop = body.scrollHeight;
       if (idx < responses.length) setTimeout(addResponse, 3500);
@@ -266,76 +266,182 @@ const KB = {
   formation: "Malick Teuw a suivi : Formation Full-Stack Developer à l'Orange Digital Center (Sonatel Académie) 2025, Certification CCP Développement Web à ISEP-Thies (2024), Baccalauréat mention Assez Bien (2022-2023), plusieurs certifications Coursera et Force-N en IA et développement web."
 };
 
-function getAIResponse(question) {
-  const q = question.toLowerCase();
-  if (/agrisen|agricol|culture|plante|récolte|farming|crop|tensorflow/.test(q)) return KB.agrisen;
-  if (/bankodc|spring|java/.test(q)) return KB.bankodc;
-  if (/banque|laravel|horizon|multi.?db|mongodb/.test(q)) return KB.banque;
-  if (/maxitsa|paiement|transfert|payment/.test(q)) return KB.maxitsa;
-  if (/cargo|cargaison|typescript/.test(q)) return KB.cargo;
-  if (/salaire|paie|employé|gsalaire/.test(q)) return KB.gsalaire;
-  if (/jootaaybi|whatsapp|messagerie/.test(q)) return KB.jootaaybi;
-  if (/portfolio|assistant|chatbot|chat/.test(q)) return KB.portfolio;
-  if (/étudiant|académique|scolaire/.test(q)) return KB.etudiants;
-  if (/m91|infinity|conglomérat|immobilier|academy/.test(q)) return KB.m91;
-  if (/wego|wigo|yango|vtc|super-app|superapp|pwa/.test(q)) return KB.wego;
-  if (/stack|compétence|technolog|maîtris|skill|framework/.test(q)) return KB.stack;
-  if (/recrut|hire|embauche|pourquoi|why|profil/.test(q)) return KB.hire;
-  if (/contact|email|whatsapp|téléphone|phone|atteindre/.test(q)) return KB.contact;
-  if (/format|certif|diplôme|école|étude|parcours/.test(q)) return KB.formation;
-  if (/projet|project|build|travail|work/.test(q)) return "Malick Teuw a 11 projets concrets : AgriSen (IA agricole), BankODC (Spring Boot), BANQUE (Laravel multi-DB), MAXITSA (paiements), Cargaisons (TypeScript), G-Salaire (React+Node), Gestion Étudiants (Laravel), JOOTAAYBI (clone WhatsApp), Portfolio IA, M91 Infinity Group, et Wego Elite (PWA VTC). Posez-moi des questions sur l'un d'eux !";
-  return "Malick Teuw est un développeur Full-Stack & IA passionné, formé à l'Orange Digital Center (Sonatel Académie). Il maîtrise React, Laravel, Spring Boot, Node.js, TensorFlow et l'intégration LLM. Il a 11 projets déployés. Demandez-moi ses projets, ses compétences ou ses coordonnées !";
+// Remplacez par votre VRAIE clé Mistral (⚠️ NE PAS POUSSER SUR GITHUB PUBLIC)
+const MISTRAL_API_KEY = "qb00iolWIoj9GhDYBAOxElFjZWcyeRYt"; 
+
+async function streamAIResponse(question, typingIndicator, msgsContainerId = 'ai-messages', isDemo = false) {
+  const msgs = document.getElementById(msgsContainerId);
+  const msgClassPrefix = isDemo ? 'demo' : 'ai';
+  
+  if (MISTRAL_API_KEY === "VOTRE_CLE_MISTRAL_ICI") {
+    typingIndicator.remove();
+    appendBotMsg("⚠️ **Attention :** Insérez votre clé d'API Mistral (ligne 269) pour activer l'IA.", msgsContainerId, isDemo);
+    return;
+  }
+
+  const systemPrompt = `Tu es l'assistant IA exclusif et officiel du portfolio de Papa Malick TEUW. Tu es un modèle très performant.
+  TA MISSION: Répondre aux questions des recruteurs avec assurance, professionnalisme et précision. Tu dois agir comme le meilleur ambassadeur de Malick, en mettant en avant son profil pour décrocher le poste de "Développeur IA - Spécialiste LLM" (particulièrement visé à la SAT Dakar). Utilise un formatage Markdown (gras, puces) élégant.
+  
+  CONTEXTE STRICT DU PROFIL DE MALICK:
+  - Identité : Papa Malick TEUW, basé à Dakar, Sénégal. Contact: malickteuw.devweb@gmail.com / +221 77 171 90 13.
+  - Formation : Sonatel Académie (Orange Digital Center) 2025, Certif ISEP-Thies 2024, Certifs IA Coursera & Force-N.
+  - Compétences IA : LLM, OpenAI, Mistral, Ollama, LangChain, LangGraph, RAG, ChromaDB, FAISS, TensorFlow.
+  - Compétences Dev : Python, FastAPI, React.js, Node.js, Laravel, Spring Boot, Flutter.
+  - Compétences DevOps / Cloud : AWS, Terraform, Docker, Jenkins, GitHub Actions.
+  
+  PROJETS PHARES À METTRE EN AVANT:
+  1. PMT-AGENT-IA : Plateforme AI-OS Entreprise à "double cerveau" (LangGraph + Ollama), RAG via FastAPI/ChromaDB. Déployé sur AWS avec Terraform.
+  2. AgriSen : IA Agricole (TensorFlow pour la détection de maladies des plantes + LLM pour les recommandations).
+  3. Assistant IA RAG : Interrogation de PDFs via architecture microservices conteneurisée.
+  4. Backend Distribué : BANQUE (Laravel/Horizon multi-DB) et BankODC (Spring Boot/JWT).
+  
+  RÈGLE D'OR (STRICTE): Si on te pose une question hors du cadre professionnel de Malick (ex: cuisine, sport, devinettes, etc.), tu DOIS refuser catégoriquement avec politesse et dire : "Je suis l'assistant IA personnel de Papa Malick Teuw, conçu **exclusivement** pour présenter son expertise professionnelle. Je suis spécialisé dans ses compétences en **LLM, RAG, Python, React et DevOps**. Souhaitez-vous que je vous détaille l'un de ses 11 projets ?"`;
+
+  const div = document.createElement('div');
+  div.className = `${msgClassPrefix}-msg bot`;
+  div.innerHTML = `<span class="${msgClassPrefix}-msg-avatar ${isDemo ? 'demo-avatar' : ''}"><i class="fa-solid fa-robot"></i></span><div class="${msgClassPrefix}-msg-bubble ${isDemo ? 'demo-bubble' : ''}"></div>`;
+  const bubble = div.querySelector(`.${msgClassPrefix}-msg-bubble`) || div.querySelector('.demo-bubble');
+
+  try {
+    const response = await fetch('https://api.mistral.ai/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${MISTRAL_API_KEY}`
+      },
+      body: JSON.stringify({
+        model: 'mistral-small-latest',
+        messages: [
+          { role: 'system', content: systemPrompt },
+          { role: 'user', content: question }
+        ],
+        temperature: 0.2,
+        stream: true
+      })
+    });
+
+    typingIndicator.remove(); // Supprime l'indicateur de frappe
+    msgs.appendChild(div);    // Ajoute la vraie bulle de message
+
+    if (!response.ok) throw new Error(`Erreur API: ${response.status}`);
+
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder("utf-8");
+    let fullText = "";
+
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      
+      const chunk = decoder.decode(value, { stream: true });
+      const lines = chunk.split("\n");
+      
+      for (const line of lines) {
+        if (line.startsWith("data: ")) {
+          const dataStr = line.slice(6);
+          if (dataStr.trim() === "[DONE]") return;
+          try {
+            const data = JSON.parse(dataStr);
+            const delta = data.choices[0].delta.content || "";
+            fullText += delta;
+            bubble.innerHTML = fullText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
+            msgs.scrollTop = msgs.scrollHeight;
+          } catch (e) {}
+        }
+      }
+    }
+  } catch (error) {
+    console.error("Erreur API Mistral:", error);
+    if(typingIndicator.parentNode) typingIndicator.remove();
+    if(!div.parentNode) msgs.appendChild(div);
+    bubble.innerHTML = "Désolé, mon serveur IA est temporairement indisponible.";
+    msgs.scrollTop = msgs.scrollHeight;
+  }
 }
 
-
-function appendAIMsg(role, text) {
-  const msgs = document.getElementById('ai-messages');
+function appendUserMsg(text, containerId = 'ai-messages', isDemo = false) {
+  const msgs = document.getElementById(containerId);
   const div = document.createElement('div');
-  div.className = `ai-msg ${role}`;
-  div.innerHTML = role === 'bot'
-    ? `<span class="ai-msg-avatar">🤖</span><div class="ai-msg-bubble">${text}</div>`
-    : `<div class="ai-msg-bubble">${text}</div>`;
+  const prefix = isDemo ? 'demo' : 'ai';
+  div.className = `${prefix}-msg user`;
+  div.innerHTML = `<div class="${prefix}-msg-bubble ${isDemo ? 'demo-bubble' : ''}">${text}</div>`;
   msgs.appendChild(div);
   msgs.scrollTop = msgs.scrollHeight;
 }
 
-function appendTyping() {
-  const msgs = document.getElementById('ai-messages');
+function appendBotMsg(text, containerId = 'ai-messages', isDemo = false) {
+  const msgs = document.getElementById(containerId);
   const div = document.createElement('div');
-  div.className = 'ai-msg bot';
-  div.id = 'ai-typing-indicator';
-  div.innerHTML = `<span class="ai-msg-avatar">🤖</span><div class="ai-msg-bubble"><span class="typing-dots"><span></span><span></span><span></span></span></div>`;
+  const prefix = isDemo ? 'demo' : 'ai';
+  div.className = `${prefix}-msg bot`;
+  div.innerHTML = `<span class="${prefix}-msg-avatar ${isDemo ? 'demo-avatar' : ''}"><i class="fa-solid fa-robot"></i></span><div class="${prefix}-msg-bubble ${isDemo ? 'demo-bubble' : ''}">${text}</div>`;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function appendTyping(containerId = 'ai-messages', isDemo = false) {
+  const msgs = document.getElementById(containerId);
+  const div = document.createElement('div');
+  const prefix = isDemo ? 'demo' : 'ai';
+  div.className = `${prefix}-msg bot`;
+  div.id = `${prefix}-typing-indicator`;
+  div.innerHTML = `<span class="${prefix}-msg-avatar ${isDemo ? 'demo-avatar' : ''}"><i class="fa-solid fa-robot"></i></span><div class="${prefix}-msg-bubble ${isDemo ? 'demo-bubble' : ''}"><span class="typing-dots"><span></span><span></span><span></span></span></div>`;
   msgs.appendChild(div);
   msgs.scrollTop = msgs.scrollHeight;
   return div;
 }
 
-function sendMessage() {
+async function sendMessage() {
   const input = document.getElementById('ai-input');
   const text = input.value.trim();
   if (!text) return;
   input.value = '';
-  // Remove suggestions
+  
   const sugg = document.querySelector('.ai-suggestions');
   if (sugg) sugg.remove();
-  appendAIMsg('user', text);
+  
+  appendUserMsg(text);
   const typing = appendTyping();
-  setTimeout(() => {
-    typing.remove();
-    appendAIMsg('bot', getAIResponse(text));
-  }, 900 + Math.random() * 400);
+  
+  await streamAIResponse(text, typing);
 }
 
-function sendSuggestion(btn) {
+async function sendSuggestion(btn) {
   const text = btn.textContent;
   const sugg = document.querySelector('.ai-suggestions');
   if (sugg) sugg.remove();
-  appendAIMsg('user', text);
+  
+  appendUserMsg(text);
   const typing = appendTyping();
-  setTimeout(() => {
-    typing.remove();
-    appendAIMsg('bot', getAIResponse(text));
-  }, 900 + Math.random() * 400);
+  
+  await streamAIResponse(text, typing);
+}
+
+// === LIVE DEMO CHAT LOGIC ===
+async function sendDemoMessage() {
+  const input = document.getElementById('demo-input');
+  const text = input.value.trim();
+  if (!text) return;
+  input.value = '';
+  
+  const sugg = document.querySelector('.demo-suggestions');
+  if (sugg) sugg.remove();
+  
+  appendUserMsg(text, 'demo-chat-body', true);
+  const typing = appendTyping('demo-chat-body', true);
+  
+  await streamAIResponse(text, typing, 'demo-chat-body', true);
+}
+
+async function demoSuggest(btn) {
+  const text = btn.textContent;
+  const sugg = document.querySelector('.demo-suggestions');
+  if (sugg) sugg.remove();
+  
+  appendUserMsg(text, 'demo-chat-body', true);
+  const typing = appendTyping('demo-chat-body', true);
+  
+  await streamAIResponse(text, typing, 'demo-chat-body', true);
 }
 
 // === INTERSECTION OBSERVER FADE-IN ===
