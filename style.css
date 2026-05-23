@@ -908,6 +908,12 @@ footer { padding: 2rem; text-align: center; color: var(--muted); font-size: .85r
 .cert-card {
   display: flex; align-items: center; gap: .75rem;
   padding: .85rem 1rem;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.cert-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(108, 99, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(108, 99, 255, 0.1);
 }
 .cert-icon { font-size: 1.2rem; flex-shrink: 0; }
 .cert-name { font-size: .85rem; font-weight: 600; }
@@ -919,6 +925,7 @@ footer { padding: 2rem; text-align: center; color: var(--muted); font-size: .85r
 }
 .cert-badge.done        { background: rgba(0,230,118,0.12); color: var(--green);   border: 1px solid rgba(0,230,118,0.3); }
 .cert-badge.in-progress { background: rgba(0,212,255,0.08); color: var(--accent2); border: 1px solid rgba(0,212,255,0.25); }
+.cert-badge.verified    { background: rgba(108,99,255,0.12); color: var(--accent); border: 1px solid rgba(108,99,255,0.3); }
 
 /* === METRICS === */
 .metrics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }

@@ -1,0 +1,112 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage[left=1.5cm, right=1.5cm, top=1.5cm, bottom=1.5cm]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{titlesec}
+
+% Couleurs
+\definecolor{primary}{RGB}{41, 128, 185}
+\definecolor{dark}{RGB}{44, 62, 80}
+
+% Configuration des liens
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primary,
+    filecolor=magenta,      
+    urlcolor=primary,
+    pdftitle={CV Papa Malick TEUW - Ingénieur IA / Spécialiste LLM},
+}
+
+% Configuration des titres
+\titleformat{\section}{\Large\bfseries\color{dark}}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{12pt}{8pt}
+
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\begin{center}
+    {\Huge \textbf{\color{dark} Papa Malick TEUW}}\\[0.2cm]
+    {\Large \textbf{\color{primary} Développeur IA – Spécialiste LLM \& RAG}}\\[0.3cm]
+    \textbf{Lieu :} Dakar, Sénégal \quad \textbf{Tél :} +221 77 171 90 13 \quad \textbf{Email :} \href{mailto:malickteuw.devweb@gmail.com}{malickteuw.devweb@gmail.com}\\[0.1cm]
+    \textbf{GitHub :} \href{https://github.com/MalickDevWeb}{github.com/MalickDevWeb} \quad \textbf{Web :} \href{https://papa-malick-teuw-dev-ia.vercel.app/}{Portfolio (Assistant IA Intégré)}
+\end{center}
+
+\vspace{0.3cm}
+
+\section*{Profil \& Objectif Professionnel}
+Ingénieur IA et Développeur Full-Stack, spécialisé dans la conception et la mise en production de systèmes LLM, de pipelines RAG et de backends distribués. Je construis des solutions d'Intelligence Artificielle de qualité industrielle, alliant de fortes compétences en \textbf{Python}, \textbf{Prompt Engineering avancé} et \textbf{déploiement cloud} (AWS, Docker, Terraform). Très motivé pour apporter mon expertise technique à la SAT en tant que Spécialiste LLM.
+
+\section*{Compétences Techniques (IA \& Ingénierie Logicielle)}
+\begin{itemize}[leftmargin=0.5cm, label={--}, itemsep=2pt]
+    \item \textbf{Modèles de Langage (LLM) \& API :} OpenAI API, Mistral, déploiement de modèles Open-Source (Ollama).
+    \item \textbf{Frameworks NLP / IA :} LangChain, LangGraph, TensorFlow, HuggingFace.
+    \item \textbf{Architecture IA :} Retrieval-Augmented Generation (RAG), Prompt Engineering avancé, Bases de données vectorielles (ChromaDB, FAISS).
+    \item \textbf{Programmation :} Excellente maîtrise de \textbf{Python}, FastAPI, Flask. JavaScript/TypeScript (Node.js, React).
+    \item \textbf{Mise en production (MLOps \& DevOps) :} Déploiement Cloud (AWS), Conteneurisation (Docker), Infrastructure as Code (Terraform), Automatisation CI/CD (Jenkins, GitHub Actions).
+    \item \textbf{Compétences transverses :} Développement Frontend (React, Next.js) et Mobile (Flutter) pour la conception d'interfaces interactives IA.
+\end{itemize}
+
+\section*{Expériences \& Projets IA en Production}
+
+\textbf{\color{dark} PMT-AGENT-IA (Plateforme AI-OS Entreprise)} \hfill \textit{GitHub \& Production}\\
+\textit{Architecte IA \& Cloud}
+\begin{itemize}[leftmargin=0.5cm, label={--}, itemsep=1pt]
+    \item Conception d'un système IA de pointe à "double cerveau" intégrant \textbf{LangGraph} et \textbf{Ollama} (modèles open-source).
+    \item Implémentation d'un pipeline RAG robuste avec \textbf{FastAPI} et \textbf{ChromaDB} pour la gestion de contexte avancé.
+    \item Mise en production complète via \textbf{Terraform} sur \textbf{AWS}, avec automatisation CI/CD (Jenkins, GitHub Actions).
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{\color{dark} Assistant IA RAG (Retrieval-Augmented Generation)} \hfill \textit{GitHub \& Production}\\
+\textit{Développeur IA \& Backend}
+\begin{itemize}[leftmargin=0.5cm, label={--}, itemsep=1pt]
+    \item Développement d'un assistant conversationnel permettant l'interrogation de corpus documentaires (PDFs).
+    \item Intégration de l'API OpenAI, génération d'embeddings vectoriels et recherche de similarité cosinus.
+    \item Architecture microservices (FastAPI) entièrement conteneurisée (\textbf{Docker}) et prête pour la production.
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{\color{dark} AgriSen -- Plateforme d'Intelligence Artificielle Agricole} \hfill \textit{GitHub \& Production}\\
+\textit{Ingénieur Machine Learning \& Full-Stack}
+\begin{itemize}[leftmargin=0.5cm, label={--}, itemsep=1pt]
+    \item Intégration de \textbf{TensorFlow} pour la vision par ordinateur (détection de maladies des cultures).
+    \item Couplage avec les API LLM pour générer des recommandations agronomiques pertinentes basées sur l'analyse visuelle.
+    \item Création d'un dashboard analytique backend (Node.js / Python).
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{\color{dark} Portfolio IA -- Assistant LLM Intégré} \hfill \textit{Portfolio en ligne}\\
+\textit{Développeur IA}
+\begin{itemize}[leftmargin=0.5cm, label={--}, itemsep=1pt]
+    \item Développement d'un chatbot intégré avec \textbf{Prompt Engineering} poussé pour interagir avec les recruteurs en temps réel.
+\end{itemize}
+
+\section*{Expériences Backend \& Ingénierie Logicielle}
+
+\textbf{\color{dark} BANQUE \& BankODC (Systèmes Bancaires Distribués)} \hfill \textit{2024 - Présent}\\
+\textit{Développeur Backend (Python / Spring Boot / Laravel)}
+\begin{itemize}[leftmargin=0.5cm, label={--}, itemsep=1pt]
+    \item Architectures distribuées sur bases de données multiples (PostgreSQL, MongoDB).
+    \item Sécurisation JWT, traitement asynchrone (files d'attente), et mise en production.
+\end{itemize}
+
+\section*{Formation \& Certifications (Niveau Supérieur)}
+
+\textbf{Spécialisation en Intelligence Artificielle} \hfill \textit{Certifications Officielles}\\
+\textit{Large Language Models (LLM) \& IA Pour Tous (Coursera / Force-N)}\\
+\vspace{0.1cm}
+\textbf{Formation Développeur Full-Stack \& IA} \hfill \textit{2025}\\
+\textit{Orange Digital Center -- Sonatel Académie, Dakar}\\
+\vspace{0.1cm}
+\textbf{Certification CCP Développement Web (Niveau Bac+3 équivalent métier)} \hfill \textit{2024}\\
+\textit{ISEP-Thies}
+
+\end{document}
