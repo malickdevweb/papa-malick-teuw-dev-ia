@@ -55,12 +55,15 @@
 
   <!-- MOBILE MENU OVERLAY -->
   <div class="nav-mobile-menu" id="nav-mobile-menu">
-    <a href="#about" onclick="closeMobileMenu()" data-i18n="nav.about">About</a>
-    <a href="#projects" onclick="closeMobileMenu()" data-i18n="nav.projects">Projects</a>
-    <a href="#experience" onclick="closeMobileMenu()" data-i18n="nav.experience">Experience</a>
-    <a href="#stack" onclick="closeMobileMenu()">Stack</a>
-    <a href="#contact" onclick="closeMobileMenu()">Contact</a>
-    <a href="#contact" class="nav-mobile-cta" onclick="closeMobileMenu()" data-i18n="nav.hire">Hire Me</a>
+    <div class="nav-mobile-bg-glow"></div>
+    <div class="nav-mobile-items">
+      <a href="#about" onclick="closeMobileMenu()"><i class="fa-solid fa-user"></i> <span data-i18n="nav.about">About</span></a>
+      <a href="#projects" onclick="closeMobileMenu()"><i class="fa-solid fa-code"></i> <span data-i18n="nav.projects">Projects</span></a>
+      <a href="#experience" onclick="closeMobileMenu()"><i class="fa-solid fa-road"></i> <span data-i18n="nav.experience">Experience</span></a>
+      <a href="#stack" onclick="closeMobileMenu()"><i class="fa-solid fa-layer-group"></i> Stack</a>
+      <a href="#contact" onclick="closeMobileMenu()"><i class="fa-solid fa-paper-plane"></i> Contact</a>
+      <a href="#contact" class="nav-mobile-cta" onclick="closeMobileMenu()"><i class="fa-solid fa-handshake"></i> <span data-i18n="nav.hire">Hire Me</span></a>
+    </div>
   </div>
 
   <!-- HERO -->
