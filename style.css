@@ -808,6 +808,7 @@ footer { padding: 2rem; text-align: center; color: var(--muted); font-size: .85r
   /* AI widget panel */
   .ai-panel { width: 340px; }
   .hero-scroll-hint { display: none; }
+  .scroll-progress { display: none; }
 }
 
 /* === MOBILE LARGE (≤640px) === */
