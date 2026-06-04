@@ -935,7 +935,7 @@ footer { padding: 2rem; text-align: center; color: var(--muted); font-size: .85r
 }
 .back-to-top.visible { opacity: 1; transform: translateY(0); }
 .back-to-top:hover { background: rgba(108,99,255,0.15); border-color: var(--accent); }
-@media (max-width: 640px) { .back-to-top { bottom: 5rem; right: 1.25rem; } }
+@media (max-width: 640px) { .back-to-top { display: none; } }
 
 /* === TYPEWRITER === */
 .typewriter-text { color: var(--accent2); font-weight: 700; }
