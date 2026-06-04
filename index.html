@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,13 +27,26 @@
     <div class="nav-inner">
       <div class="nav-logo"><span class="logo-bracket">&lt;</span>malick.teuw<span class="logo-bracket">/&gt;</span></div>
       <ul class="nav-links">
-        <li><a href="#about"><i class="fa-solid fa-user" style="margin-right:5px;font-size:.8rem;"></i>About</a></li>
-        <li><a href="#projects"><i class="fa-solid fa-code" style="margin-right:5px;font-size:.8rem;"></i>Projects</a></li>
-        <li><a href="#experience"><i class="fa-solid fa-road" style="margin-right:5px;font-size:.8rem;"></i>Experience</a></li>
+        <li><a href="#about"><i class="fa-solid fa-user" style="margin-right:5px;font-size:.8rem;"></i><span data-i18n="nav.about">About</span></a></li>
+        <li><a href="#projects"><i class="fa-solid fa-code" style="margin-right:5px;font-size:.8rem;"></i><span data-i18n="nav.projects">Projects</span></a></li>
+        <li><a href="#experience"><i class="fa-solid fa-road" style="margin-right:5px;font-size:.8rem;"></i><span data-i18n="nav.experience">Experience</span></a></li>
         <li><a href="#stack"><i class="fa-solid fa-layer-group" style="margin-right:5px;font-size:.8rem;"></i>Stack</a></li>
         <li><a href="#contact"><i class="fa-solid fa-paper-plane" style="margin-right:5px;font-size:.8rem;"></i>Contact</a></li>
       </ul>
-      <a href="#contact" class="nav-cta" id="nav-cta-btn"><i class="fa-solid fa-handshake" style="margin-right:6px;"></i>Hire Me</a>
+      <!-- LANGUAGE SWITCHER -->
+      <div class="lang-switcher" id="lang-switcher">
+        <button class="lang-btn" id="lang-btn" onclick="toggleLangMenu()">
+          <i class="fa-solid fa-globe"></i>
+          <span id="lang-current">FR</span>
+          <i class="fa-solid fa-chevron-down" style="font-size:.6rem;"></i>
+        </button>
+        <div class="lang-dropdown" id="lang-dropdown">
+          <button class="lang-option active" onclick="switchLang('fr')"><span class="lang-flag">🇫🇷</span> Français</button>
+          <button class="lang-option" onclick="switchLang('en')"><span class="lang-flag">🇬🇧</span> English</button>
+          <button class="lang-option" onclick="switchLang('es')"><span class="lang-flag">🇪🇸</span> Español</button>
+        </div>
+      </div>
+      <a href="#contact" class="nav-cta" id="nav-cta-btn"><i class="fa-solid fa-handshake" style="margin-right:6px;"></i><span data-i18n="nav.hire">Hire Me</span></a>
       <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu" onclick="toggleMobileMenu()">
         <span></span><span></span><span></span>
       </button>
@@ -42,12 +55,12 @@
 
   <!-- MOBILE MENU OVERLAY -->
   <div class="nav-mobile-menu" id="nav-mobile-menu">
-    <a href="#about" onclick="closeMobileMenu()">About</a>
-    <a href="#projects" onclick="closeMobileMenu()">Projects</a>
-    <a href="#experience" onclick="closeMobileMenu()">Experience</a>
+    <a href="#about" onclick="closeMobileMenu()" data-i18n="nav.about">About</a>
+    <a href="#projects" onclick="closeMobileMenu()" data-i18n="nav.projects">Projects</a>
+    <a href="#experience" onclick="closeMobileMenu()" data-i18n="nav.experience">Experience</a>
     <a href="#stack" onclick="closeMobileMenu()">Stack</a>
     <a href="#contact" onclick="closeMobileMenu()">Contact</a>
-    <a href="#contact" class="nav-mobile-cta" onclick="closeMobileMenu()">Hire Me</a>
+    <a href="#contact" class="nav-mobile-cta" onclick="closeMobileMenu()" data-i18n="nav.hire">Hire Me</a>
   </div>
 
   <!-- HERO -->
@@ -57,9 +70,9 @@
     <div class="hero-content hero-two-col">
       <!-- Left: text -->
       <div class="hero-left">
-        <div class="hero-badge"><span class="badge-dot"></span> Disponible — Orange Digital Center 2025</div>
-        <h1>Building <span class="gradient-text">AI-Powered</span><br>Systems That Scale</h1>
-        <p class="hero-sub"><span id="typewriter" class="typewriter-text"></span><span class="typewriter-cursor">|</span> — Je conçois et déploie des systèmes LLM de qualité industrielle, des pipelines RAG et des backends distribués qui résolvent des problèmes concrets.</p>
+        <div class="hero-badge"><span class="badge-dot"></span> <span data-i18n="hero.badge">Disponible — Orange Digital Center 2025</span></div>
+        <h1 data-i18n="hero.title">Building <span class="gradient-text">AI-Powered</span><br>Systems That Scale</h1>
+        <p class="hero-sub"><span id="typewriter" class="typewriter-text"></span><span class="typewriter-cursor">|</span> — <span data-i18n="hero.sub">Je conçois et déploie des systèmes LLM de qualité industrielle, des pipelines RAG et des backends distribués qui résolvent des problèmes concrets.</span></p>
         <div class="hero-actions">
 
           <a href="https://github.com/MalickDevWeb" target="_blank" class="contact-link" id="contact-github-btn">
@@ -68,11 +81,11 @@
           </a>
         </div>
         <div class="hero-stats">
-          <div class="stat"><span class="stat-num">13</span><span class="stat-label">Projects Built</span></div>
+          <div class="stat"><span class="stat-num">13</span><span class="stat-label" data-i18n="hero.stat1">Projects Built</span></div>
           <div class="stat-divider"></div>
-          <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Years Building</span></div>
+          <div class="stat"><span class="stat-num">3+</span><span class="stat-label" data-i18n="hero.stat2">Years Building</span></div>
           <div class="stat-divider"></div>
-          <div class="stat"><span class="stat-num">AI</span><span class="stat-label">Integrated Systems</span></div>
+          <div class="stat"><span class="stat-num">AI</span><span class="stat-label" data-i18n="hero.stat3">Integrated Systems</span></div>
         </div>
       </div>
       <!-- Right: profile photo -->
@@ -83,7 +96,7 @@
           <img src="profil.png" alt="Malick Teuw" class="hero-photo" id="hero-profile-img" />
           <div class="hero-photo-badge glass">
             <span class="badge-dot"></span>
-            <span>Open to work</span>
+            <span data-i18n="hero.opentowork">Open to work</span>
           </div>
         </div>
       </div>
@@ -97,12 +110,12 @@
   <!-- ABOUT -->
   <section id="about">
     <div class="container">
-      <div class="section-label">About</div>
+      <div class="section-label" data-i18n="nav.about">About</div>
       <div class="about-grid">
         <div class="about-text">
-          <h2>Je ne fais pas que coder.<br>J' <span class="gradient-text">architecture des systèmes.</span></h2>
-          <p>Développeur Web Full-Stack passionné par l'IA et les technologies émergentes. Je transforme des idées en interfaces simples, efficaces et augmentées par l'intelligence artificielle.</p>
-          <p>De la gestion bancaire distribuée à la vision par ordinateur agricole — chaque projet que je livre est conçu pour avoir un impact réel en production.</p>
+          <h2 data-i18n="about.title">Je ne fais pas que coder.<br>J' <span class="gradient-text">architecture des systèmes.</span></h2>
+          <p data-i18n="about.p1">Développeur Web Full-Stack passionné par l'IA et les technologies émergentes. Je transforme des idées en interfaces simples, efficaces et augmentées par l'intelligence artificielle.</p>
+          <p data-i18n="about.p2">De la gestion bancaire distribuée à la vision par ordinateur agricole — chaque projet que je livre est conçu pour avoir un impact réel en production.</p>
           <div class="about-chips">
             <span class="chip">React / Next.js</span>
             <span class="chip">Laravel / Spring Boot</span>
@@ -114,8 +127,8 @@
           <div class="current-status glass">
             <span class="status-pulse"></span>
             <div>
-              <div class="status-title">Currently Building</div>
-              <div class="status-desc">AgriSen AI — TensorFlow + OpenAI + React.js · Déploiement cloud</div>
+              <div class="status-title" data-i18n="about.status_title">Currently Building</div>
+              <div class="status-desc" data-i18n="about.status_desc">AgriSen AI — TensorFlow + OpenAI + React.js · Déploiement cloud</div>
             </div>
           </div>
         </div>
@@ -124,29 +137,29 @@
             <div class="about-card-icon" style="background:rgba(139,92,246,0.12);border-radius:14px;padding:12px;display:inline-flex;margin-bottom:.5rem;">
               <i class="fa-solid fa-brain" style="font-size:1.7rem;color:var(--accent2);"></i>
             </div>
-            <h4>IA &amp; LLM</h4>
-            <p>TensorFlow, OpenAI API, RAG pipelines — de l'idée à l'API production</p>
+            <h4 data-i18n="about.card1_title">IA &amp; LLM</h4>
+            <p data-i18n="about.card1_desc">TensorFlow, OpenAI API, RAG pipelines — de l'idée à l'API production</p>
           </div>
           <div class="about-card glass">
             <div class="about-card-icon" style="background:rgba(245,158,11,0.12);border-radius:14px;padding:12px;display:inline-flex;margin-bottom:.5rem;">
               <i class="fa-solid fa-server" style="font-size:1.7rem;color:var(--gold);"></i>
             </div>
-            <h4>Architecture Backend</h4>
-            <p>Laravel, Spring Boot, Node.js — systèmes distribués, async, microservices</p>
+            <h4 data-i18n="about.card2_title">Architecture Backend</h4>
+            <p data-i18n="about.card2_desc">Laravel, Spring Boot, Node.js — systèmes distribués, async, microservices</p>
           </div>
           <div class="about-card glass">
             <div class="about-card-icon" style="background:rgba(16,185,129,0.12);border-radius:14px;padding:12px;display:inline-flex;margin-bottom:.5rem;">
               <i class="fa-brands fa-docker" style="font-size:1.7rem;color:var(--green);"></i>
             </div>
-            <h4>Mise en Production</h4>
-            <p>Docker, CI/CD, Render, AWS — pas que sur localhost</p>
+            <h4 data-i18n="about.card3_title">Mise en Production</h4>
+            <p data-i18n="about.card3_desc">Docker, CI/CD, Render, AWS — pas que sur localhost</p>
           </div>
           <div class="about-card glass">
             <div class="about-card-icon" style="background:rgba(99,102,241,0.12);border-radius:14px;padding:12px;display:inline-flex;margin-bottom:.5rem;">
               <i class="devicon-python-plain colored" style="font-size:1.7rem;"></i>
             </div>
-            <h4>Python &amp; Architecture</h4>
-            <p>Automatisation, conception de solutions logicielles et algorithmiques avec Python</p>
+            <h4 data-i18n="about.card4_title">Python &amp; Architecture</h4>
+            <p data-i18n="about.card4_desc">Automatisation, conception de solutions logicielles et algorithmiques avec Python</p>
           </div>
         </div>
       </div>
@@ -156,9 +169,9 @@
   <!-- EXPERIENCE / TIMELINE -->
   <section id="projects">
     <div class="container">
-      <div class="section-label">Projects</div>
-      <h2 class="section-title">13 Projets <span class="gradient-text">Concrets</span></h2>
-      <p class="section-sub">Du backend bancaire distribué à la plateforme IA agricole — chaque projet est déployé, documenté et démonstrable.</p>
+      <div class="section-label" data-i18n="nav.projects">Projects</div>
+      <h2 class="section-title" data-i18n="projects.title">13 Projets <span class="gradient-text">Concrets</span></h2>
+      <p class="section-sub" data-i18n="projects.sub">Du backend bancaire distribué à la plateforme IA agricole — chaque projet est déployé, documenté et démonstrable.</p>
 
       <div class="projects-grid">
 
@@ -433,8 +446,8 @@
   <!-- TECH STACK -->
   <section id="experience">
     <div class="container">
-      <div class="section-label">Experience</div>
-      <h2 class="section-title">My <span class="gradient-text">Journey</span></h2>
+      <div class="section-label" data-i18n="nav.experience">Experience</div>
+      <h2 class="section-title" data-i18n="experience.title">My <span class="gradient-text">Journey</span></h2>
       <div class="exp-grid">
 
         <!-- Timeline left -->
@@ -547,7 +560,7 @@
   <section id="stack">
     <div class="container">
       <div class="section-label">Tech Stack</div>
-      <h2 class="section-title">Ce que je <span class="gradient-text">Maîtrise</span></h2>
+      <h2 class="section-title" data-i18n="stack.title">Ce que je <span class="gradient-text">Maîtrise</span></h2>
       <div class="stack-grid">
         <div class="stack-category">
           <h4 class="stack-cat-title"><i class="fa-solid fa-brain" style="color:var(--accent2); margin-right:6px;"></i> IA \& Machine Learning</h4>
@@ -603,8 +616,8 @@
     <div class="container">
       <div class="section-label">Contact</div>
       <div class="contact-inner glass">
-        <h2>Construisons quelque chose<br><span class="gradient-text">d'Exceptionnel</span></h2>
-        <p>Disponible pour des postes Full-Stack, Backend et IA. Discutons !</p>
+        <h2 data-i18n="contact.title">Construisons quelque chose<br><span class="gradient-text">d'Exceptionnel</span></h2>
+        <p data-i18n="contact.sub">Disponible pour des postes Full-Stack, Backend et IA. Discutons !</p>
         <div class="contact-links">
           <a href="mailto:malickteuw.devweb@gmail.com" class="contact-link" id="contact-email-btn">
             <i class="fa-solid fa-envelope"></i>

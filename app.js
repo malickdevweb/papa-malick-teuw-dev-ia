@@ -28,7 +28,7 @@ function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
   if (!el) return;
   let roleIdx = 0, charIdx = 0, deleting = false;
   function tick() {
-    const current = roles[roleIdx];
+    const current = (window._typewriterRoles || roles)[roleIdx % (window._typewriterRoles || roles).length];
     el.textContent = current.slice(0, charIdx);
     if (!deleting && charIdx < current.length) { charIdx++; setTimeout(tick, 80); }
     else if (!deleting && charIdx === current.length) { deleting = true; setTimeout(tick, 1800); }
@@ -453,4 +453,162 @@ document.querySelectorAll('.project-card, .about-card, .stack-category').forEach
   el.style.transform = 'translateY(30px)';
   el.style.transition = 'opacity .6s ease, transform .6s ease';
   observer.observe(el);
+});
+
+// === I18N TRANSLATION SYSTEM ===
+const translations = {
+  fr: {
+    "nav.about": "À propos",
+    "nav.projects": "Projets",
+    "nav.experience": "Expérience",
+    "nav.hire": "Recrutez-moi",
+    "hero.badge": "Disponible — Orange Digital Center 2025",
+    "hero.title": "Je construis des <span class=\"gradient-text\">systèmes IA</span><br>qui passent à l'échelle",
+    "hero.sub": "Je conçois et déploie des systèmes LLM de qualité industrielle, des pipelines RAG et des backends distribués qui résolvent des problèmes concrets.",
+    "hero.stat1": "Projets livrés",
+    "hero.stat2": "Ans d'expérience",
+    "hero.stat3": "Systèmes intégrés",
+    "hero.opentowork": "Disponible",
+    "about.title": "Je ne fais pas que coder.<br>J' <span class=\"gradient-text\">architecture des systèmes.</span>",
+    "about.p1": "Développeur Web Full-Stack passionné par l'IA et les technologies émergentes. Je transforme des idées en interfaces simples, efficaces et augmentées par l'intelligence artificielle.",
+    "about.p2": "De la gestion bancaire distribuée à la vision par ordinateur agricole — chaque projet que je livre est conçu pour avoir un impact réel en production.",
+    "about.status_title": "En cours de construction",
+    "about.status_desc": "AgriSen AI — TensorFlow + OpenAI + React.js · Déploiement cloud",
+    "about.card1_title": "IA & LLM",
+    "about.card1_desc": "TensorFlow, OpenAI API, RAG pipelines — de l'idée à l'API production",
+    "about.card2_title": "Architecture Backend",
+    "about.card2_desc": "Laravel, Spring Boot, Node.js — systèmes distribués, async, microservices",
+    "about.card3_title": "Mise en Production",
+    "about.card3_desc": "Docker, CI/CD, Render, AWS — pas que sur localhost",
+    "about.card4_title": "Python & Architecture",
+    "about.card4_desc": "Automatisation, conception de solutions logicielles et algorithmiques avec Python",
+    "projects.title": "13 Projets <span class=\"gradient-text\">Concrets</span>",
+    "projects.sub": "Du backend bancaire distribué à la plateforme IA agricole — chaque projet est déployé, documenté et démonstrable.",
+    "experience.title": "Mon <span class=\"gradient-text\">Parcours</span>",
+    "stack.title": "Ce que je <span class=\"gradient-text\">Maîtrise</span>",
+    "contact.title": "Construisons quelque chose<br><span class=\"gradient-text\">d'Exceptionnel</span>",
+    "contact.sub": "Disponible pour des postes Full-Stack, Backend et IA. Discutons !",
+    "_typewriter": ["Développeur Full-Stack", "Ingénieur IA", "Architecte Backend", "Bâtisseur de systèmes LLM"]
+  },
+  en: {
+    "nav.about": "About",
+    "nav.projects": "Projects",
+    "nav.experience": "Experience",
+    "nav.hire": "Hire Me",
+    "hero.badge": "Available — Orange Digital Center 2025",
+    "hero.title": "Building <span class=\"gradient-text\">AI-Powered</span><br>Systems That Scale",
+    "hero.sub": "I design and deploy industrial-grade LLM systems, RAG pipelines, and distributed backends that solve real-world problems.",
+    "hero.stat1": "Projects Built",
+    "hero.stat2": "Years Building",
+    "hero.stat3": "Integrated Systems",
+    "hero.opentowork": "Open to work",
+    "about.title": "I don't just code.<br>I <span class=\"gradient-text\">architect systems.</span>",
+    "about.p1": "Full-Stack Web Developer passionate about AI and emerging technologies. I turn ideas into simple, efficient, AI-augmented interfaces.",
+    "about.p2": "From distributed banking to agricultural computer vision — every project I deliver is designed for real production impact.",
+    "about.status_title": "Currently Building",
+    "about.status_desc": "AgriSen AI — TensorFlow + OpenAI + React.js · Cloud deployment",
+    "about.card1_title": "AI & LLM",
+    "about.card1_desc": "TensorFlow, OpenAI API, RAG pipelines — from idea to production API",
+    "about.card2_title": "Backend Architecture",
+    "about.card2_desc": "Laravel, Spring Boot, Node.js — distributed systems, async, microservices",
+    "about.card3_title": "Production Deployment",
+    "about.card3_desc": "Docker, CI/CD, Render, AWS — not just on localhost",
+    "about.card4_title": "Python & Architecture",
+    "about.card4_desc": "Automation, software and algorithmic solution design with Python",
+    "projects.title": "13 <span class=\"gradient-text\">Concrete</span> Projects",
+    "projects.sub": "From distributed banking backend to AI agricultural platform — each project is deployed, documented, and demonstrable.",
+    "experience.title": "My <span class=\"gradient-text\">Journey</span>",
+    "stack.title": "What I <span class=\"gradient-text\">Master</span>",
+    "contact.title": "Let's Build Something<br><span class=\"gradient-text\">Exceptional</span>",
+    "contact.sub": "Available for Full-Stack, Backend, and AI positions. Let's talk!",
+    "_typewriter": ["Full-Stack Developer", "AI Engineer", "Backend Architect", "LLM Systems Builder"]
+  },
+  es: {
+    "nav.about": "Acerca de",
+    "nav.projects": "Proyectos",
+    "nav.experience": "Experiencia",
+    "nav.hire": "Contrátame",
+    "hero.badge": "Disponible — Orange Digital Center 2025",
+    "hero.title": "Construyo <span class=\"gradient-text\">sistemas IA</span><br>que escalan",
+    "hero.sub": "Diseño y despliego sistemas LLM de grado industrial, pipelines RAG y backends distribuidos que resuelven problemas reales.",
+    "hero.stat1": "Proyectos creados",
+    "hero.stat2": "Años construyendo",
+    "hero.stat3": "Sistemas integrados",
+    "hero.opentowork": "Disponible",
+    "about.title": "No solo codifico.<br>Yo <span class=\"gradient-text\">arquitecto sistemas.</span>",
+    "about.p1": "Desarrollador Web Full-Stack apasionado por la IA y las tecnologías emergentes. Transformo ideas en interfaces simples, eficientes y potenciadas por inteligencia artificial.",
+    "about.p2": "Desde la banca distribuida hasta la visión por computadora agrícola — cada proyecto que entrego está diseñado para un impacto real en producción.",
+    "about.status_title": "Construyendo ahora",
+    "about.status_desc": "AgriSen AI — TensorFlow + OpenAI + React.js · Despliegue cloud",
+    "about.card1_title": "IA & LLM",
+    "about.card1_desc": "TensorFlow, OpenAI API, RAG pipelines — de la idea a la API en producción",
+    "about.card2_title": "Arquitectura Backend",
+    "about.card2_desc": "Laravel, Spring Boot, Node.js — sistemas distribuidos, async, microservicios",
+    "about.card3_title": "Despliegue en Producción",
+    "about.card3_desc": "Docker, CI/CD, Render, AWS — no solo en localhost",
+    "about.card4_title": "Python & Arquitectura",
+    "about.card4_desc": "Automatización, diseño de soluciones de software y algorítmicas con Python",
+    "projects.title": "13 Proyectos <span class=\"gradient-text\">Concretos</span>",
+    "projects.sub": "Del backend bancario distribuido a la plataforma IA agrícola — cada proyecto está desplegado, documentado y demostrable.",
+    "experience.title": "Mi <span class=\"gradient-text\">Trayectoria</span>",
+    "stack.title": "Lo que <span class=\"gradient-text\">Domino</span>",
+    "contact.title": "Construyamos algo<br><span class=\"gradient-text\">Excepcional</span>",
+    "contact.sub": "Disponible para puestos Full-Stack, Backend e IA. ¡Hablemos!",
+    "_typewriter": ["Desarrollador Full-Stack", "Ingeniero IA", "Arquitecto Backend", "Constructor de sistemas LLM"]
+  }
+};
+
+let currentLang = localStorage.getItem('portfolio-lang') || 'fr';
+
+function applyTranslations(lang) {
+  const t = translations[lang];
+  if (!t) return;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key]) el.innerHTML = t[key];
+  });
+  document.documentElement.lang = lang;
+  // Update typewriter roles
+  if (t._typewriter) {
+    window._typewriterRoles = t._typewriter;
+  }
+}
+
+function switchLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('portfolio-lang', lang);
+  applyTranslations(lang);
+  // Update button label
+  const labels = { fr: 'FR', en: 'EN', es: 'ES' };
+  const curr = document.getElementById('lang-current');
+  if (curr) curr.textContent = labels[lang] || lang.toUpperCase();
+  // Update active state
+  document.querySelectorAll('.lang-option').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent.trim().toLowerCase().includes(
+      lang === 'fr' ? 'français' : lang === 'en' ? 'english' : 'español'
+    ));
+  });
+  // Close dropdown
+  closeLangMenu();
+}
+
+function toggleLangMenu() {
+  const dd = document.getElementById('lang-dropdown');
+  dd.classList.toggle('open');
+}
+
+function closeLangMenu() {
+  const dd = document.getElementById('lang-dropdown');
+  if (dd) dd.classList.remove('open');
+}
+
+// Close lang dropdown on outside click
+document.addEventListener('click', (e) => {
+  const sw = document.getElementById('lang-switcher');
+  if (sw && !sw.contains(e.target)) closeLangMenu();
+});
+
+// Apply saved language on load
+window.addEventListener('load', () => {
+  switchLang(currentLang);
 });
